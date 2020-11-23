@@ -8,7 +8,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Predictous : Result</title>
 
 <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -37,7 +37,7 @@ function drawChart() {
 ]);
 
   // Optional; add a title and set the width and height of the chart
-  var options = {'title':'Winning Percentage', 'width':850, 'height':700};
+  var options = {'title':'Winning Percentage', 'width':550, 'height':400,  'backgroundColor': { fill:'transparent' }};
 
   // Display the chart inside the <div> element with id="piechart"
   var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -45,7 +45,7 @@ function drawChart() {
 }
 </script>
 </head>
-<body style="background-image : url({% static 'bgabout.jpg' %}); background-size : cover;">
+<body style="background-image : url({% static 'bgabout.jpg' %}); background-size : cover; color: red;">
 
  <nav class="navbar navbar-dark bg-dark">
   <a class="navbar-brand" >
@@ -58,9 +58,9 @@ function drawChart() {
 </nav>
     
 
-    <h1 style="color: white;">Winning Percentage of Country 1 is {{c1_per}} and of Country 2 is {{c2_per}}<h1>
+    <h1 style="color: white;">Winning Percentage of {{country1}} is {{c1_per}} and of {{country2}} is {{c2_per}}<h1>
 
-<div id="piechart" style="background-color: red; width: 850px"></div>
+<div id="piechart" style="width: 850px; margin-left: auto; margin-left: 30%;"></div>
 
 
 

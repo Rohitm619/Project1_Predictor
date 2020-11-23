@@ -24,7 +24,7 @@
 } </style>
   
 <link rel="icon" type="image/png" href="{% static 'applogo.png' %}"/>
-<title>Match Winner Predictor</title>
+<title>Predictous - Predict The Next Match Winner</title>
  </head>
 
 
@@ -40,7 +40,7 @@
 <nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand" >
     <img src="{% static 'applogo.png' %}" width="35" height="35" class="rounded-circle z-depth-1" alt="Match Winner Predictor Logo">
-    <b>Welcome to Match Winner Predictor</b>
+    <b>Predictous - Predict The Next Match Winner</b>
     </a>
 
     <form action='about'>
@@ -49,7 +49,7 @@
 </nav>
 
 
-<form method="post" action="{% url 'dynamic' %}">
+<form method="post" action="{% url 'dynamic' %}" enctype="multipart/form-data">
 
 {% csrf_token %}
 {% comment %} Defining a Form for Accepting first and second country and submit button {% endcomment %}
@@ -4617,8 +4617,9 @@
                          
    var getselecttwo = document.getElementById("c2");
    getselecttwo.disabled=true;
-   
 
+   
+  
 
 
 
@@ -4723,7 +4724,8 @@ function getValue1(obj){
 for(var key2 in hide){ 
   
   
-  $(hide[key2]).hide(); }
+  $(hide[key2]).hide();
+  $(hide[key2]).prop("disabled",true); }
 
 }
 
@@ -4760,6 +4762,7 @@ for(var every_dd in showlist){
   
   
   $(showlist[every_dd]).show();
+  $(showlist[every_dd]).prop("disabled",false);
   
   }
 
